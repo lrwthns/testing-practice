@@ -15,8 +15,39 @@ function reverseString(str) {
   return newArr.join('');
 }
 
-function calculator(a, b, operator) {
+const calculator = {
+  add: (a, b) => {
+    return a + b
+  },
+  substract: (a, b) => {
+    return a - b
+  },
+  divide: (a, b) => {
+    return a / b
+  },
+  multiply: (a, b) => {
+    return a * b
+  }
+}
 
+function analyze(arr) {
+  let sum = arr.reduce((a, b) => a + b);
+  let min = arr[0];
+  let max = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    };
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return {
+    average: sum/arr.length,
+    length: arr.length,
+    min: min,
+    max: max
+  };
 }
 
 export {
@@ -24,4 +55,5 @@ export {
   capitalize,
   reverseString,
   calculator,
+  analyze
 };
