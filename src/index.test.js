@@ -1,8 +1,4 @@
-import { sum, capitalize, reverseString, calculator, analyze } from './index';
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
-});
+import { capitalize, reverseString, calculator, caesarCipher, analyze } from './index';
 
 test('capitalize only the first letter', () => {
   expect(capitalize('beonARd')).toBe('Beonard');
@@ -17,6 +13,10 @@ test('calculator', () => {
   expect(calculator.substract(35, 12)).toBe(23);
   expect(calculator.divide(80, 40)).toBe(2);
   expect(calculator.multiply(5, 3)).toBe(15);
+})
+
+test('return the correctly encrypted string', () => {
+  expect(caesarCipher("What's up?", 3)).toBe("Zkdw'v xs?");
 })
 
 test('return an object with the right property values', () => {
